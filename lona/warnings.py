@@ -46,10 +46,18 @@ def _formatwarning_with_callee(message, category, filename, lineno, line):
 orginal_warnings.formatwarning = _formatwarning_with_callee  # type: ignore
 
 
-class DictResponseDeprecationWarning(PendingDeprecationWarning):
+class Lona_2_0_DeprecationWarning(PendingDeprecationWarning):
     pass
 
 
 orginal_warnings.simplefilter(
-    'once', category=DictResponseDeprecationWarning,
+    'once', category=Lona_2_0_DeprecationWarning,
 )
+
+
+class DictResponseDeprecationWarning(Lona_2_0_DeprecationWarning):
+    pass
+
+
+class DaemonizeDeprecationWarning(Lona_2_0_DeprecationWarning):
+    pass
